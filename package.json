@@ -1,0 +1,24 @@
+{
+  "name": "thoughthive",
+  "version": "1.0.0",
+  "description": "Social Network API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Terence-A/ThoughtHive.git"
+  },
+  "author": "Terence Arseneault",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Terence-A/ThoughtHive/issues"
+  },
+  "homepage": "https://github.com/Terence-A/ThoughtHive#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
+  }
+}

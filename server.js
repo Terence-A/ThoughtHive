@@ -1,15 +1,16 @@
 //imports
 const express = require("express");
-const routes = require("./routes/api");
+const routes = require("./routes");
 const mongoose = require("mongoose");
 const db = require("./config/connection");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.get("/", (req, res) => {
-  res.send("working");
-});
+// test
+// app.get("/", (req, res) => {
+//   res.send("working");
+// });
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));

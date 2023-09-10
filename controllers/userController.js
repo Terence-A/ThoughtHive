@@ -5,6 +5,7 @@ const userController = {
   async getUsers(req, res) {
     try {
       const users = await User.find()
+
         .populate({ path: "thoughts", select: "-__v" })
         .populate({ path: "friends", select: "-__v" });
       res.json(users);
@@ -16,7 +17,7 @@ const userController = {
   // ---- Get single user ----
   async getSingleUser(req, res) {
     try {
-      const user = await User.findOne({ _is: req.params.userId })
+      const user = await User.findOne({ _id: req.params.userId })
         .populate({ path: "thoughts", select: "-__v" })
         .populate({ path: "friends", select: "-__v" });
 
@@ -30,12 +31,12 @@ const userController = {
   },
   // ---- Create user ----
   async createUser(req, res) {
+    console.log("making it here");
     try {
-      console.log("making it here");
       const dbUserData = await User.create(req.body);
       res.json(dbUserData);
     } catch (err) {
-      console.log(err);
+      console.log("Error in createUser", err);
       res.status(500).json(err);
     }
   },

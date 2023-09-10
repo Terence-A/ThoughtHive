@@ -31,6 +31,7 @@ const userController = {
   // ---- Create user ----
   async createUser(req, res) {
     try {
+      console.log("making it here");
       const dbUserData = await User.create(req.body);
       res.json(dbUserData);
     } catch (err) {

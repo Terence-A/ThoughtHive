@@ -1,26 +1,20 @@
+//imports
 const express = require("express");
-const routes = require("./controllers");
+const routes = require("./routes/api");
 const mongoose = require("mongoose");
-const path = require("path");
+const db = require("./config/connection");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
-mongoose.connect("mongodb://localhost:27017/thoughtHive", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {
-  console.log("Database connected");
-});
-
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}....`);
+//Listen for server
+db.once("open", () => {
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}!`);
+  });
 });

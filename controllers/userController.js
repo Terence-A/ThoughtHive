@@ -2,7 +2,7 @@ const { User, Thought } = require("../models");
 
 const userController = {
   // ---- Get all users ----
-  async getPosts(req, res) {
+  async getUsers(req, res) {
     try {
       const users = await User.find()
         .populate({ path: "thoughts", select: "-__v" })

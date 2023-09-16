@@ -59,6 +59,6 @@ This project is licensed under the MIT License.
 
 ## Demonstration Video
 
-Video:
+Video: https://drive.google.com/file/d/1XRwzBstgC4Uj1YuFKXJ3CUphZ6IOhdH2/view?usp=sharing
 
 Github Repo: https://github.com/Terence-A/ThoughtHive
